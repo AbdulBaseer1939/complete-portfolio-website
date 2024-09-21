@@ -1,26 +1,27 @@
-const hamburger = document.querySelector(".hamburger");
-const mobileMenu = document.querySelector(".nav-list ul");
-const menuItems = document.querySelectorAll(".nav-list ul li a");
-const header = document.querySelector(".header");
+var hamBurger = document.querySelector(".hamburger-button");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
+var phoneMenu = document.querySelector(".list ul")
+
+var menuitem = document.querySelectorAll(".list ul li a");
+
+var header = document.querySelector(".head-container");
+hamBurger.addEventListener("click", () => {
+    hamBurger.classList.toggle("active");
+    phoneMenu.classList.toggle("active");
 });
 
-menuItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
-  });
+menuitem.forEach((item) => {
+    item.addEventListener("click", () => { 
+        hamBurger.classList.toggle("active");
+        phoneMenu.classList.toggle("active");
+    });
 });
 
 document.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY;
-
-  if (scrollPosition > 250) {
-    header.style.backgroundColor = "#293230";
-  } else {
-    header.style.backgroundColor = "transparent";
-  }
+    var scroll_position = window.scrollY;
+    if (scroll_position > 250) {
+        header.style.backgroundColor = "#29393c";
+    }else {
+        header.style.backgroundColor = "transparent";
+    }
 });
